@@ -1,6 +1,6 @@
 ## 安装命令
 ```
-wget -O server_test.sh https://raw.githubusercontent.com/anjing-liu/server_test/main/server_test.sh && chmod +x server_test.sh && sudo ./server_test.sh
+wget -O server_test.sh https://raw.githubusercontent.com/teaing-liu/server_test/main/server_test.sh && chmod +x server_test.sh && sudo ./server_test.sh
 ```
 
 ## 服务器测试一键脚本- 功能说明
