@@ -440,7 +440,7 @@ echo -e "${BLUE}========================================${PLAIN}"
 echo -e "${BLUE}[3/9] 执行三网回程线路测试...${PLAIN}"
 curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
 echo ""
-curl https://raw.githubusercontent.com/anjing-liu/mtr_trace/main/mtr_trace.sh | bash
+curl https://raw.githubusercontent.com/teaing-liu/mtr_trace/main/mtr_trace.sh | bash
 echo -e "${GREEN}完成${PLAIN}\n"
 
 echo -e "${BLUE}========================================${PLAIN}"
