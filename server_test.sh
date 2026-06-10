@@ -473,7 +473,10 @@ echo -e "${BLUE}[9/9] 执行超售测试...${PLAIN}"
 wget --no-check-certificate -O memoryCheck.sh https://raw.githubusercontent.com/uselibrary/memoryCheck/main/memoryCheck.sh && chmod +x memoryCheck.sh && bash memoryCheck.sh
 rm -f memoryCheck.sh
 echo -e "${GREEN}完成${PLAIN}\n"
+
+# ==========================================
 # 额外测试选择菜单
+# ==========================================
 echo ""
 echo -e "${BLUE}========================================${PLAIN}"
 echo -e "${BLUE}所有预设测试已完成${PLAIN}"
