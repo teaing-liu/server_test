@@ -473,6 +473,56 @@ echo -e "${BLUE}[9/9] 执行超售测试...${PLAIN}"
 wget --no-check-certificate -O memoryCheck.sh https://raw.githubusercontent.com/uselibrary/memoryCheck/main/memoryCheck.sh && chmod +x memoryCheck.sh && bash memoryCheck.sh
 rm -f memoryCheck.sh
 echo -e "${GREEN}完成${PLAIN}\n"
+# 额外测试选择菜单
+echo ""
+echo -e "${BLUE}========================================${PLAIN}"
+echo -e "${BLUE}所有预设测试已完成${PLAIN}"
+echo -e "${BLUE}========================================${PLAIN}"
+echo ""
+echo -e "${YELLOW}是否运行额外测试项？${PLAIN}"
+echo -e "  ${GREEN}1.${PLAIN} NodeQuality测试"
+echo -e "  ${GREEN}2.${PLAIN} yabs测试"
+echo -e "  ${GREEN}3.${PLAIN} 全部测试（NodeQuality + yabs）"
+echo -e "  ${GREEN}0.${PLAIN} 直接退出"
+echo ""
+read -p "请输入数字选择 [0-3] (默认回车退出): " choice
+
+case $choice in
+    1)
+        echo -e "${BLUE}正在运行 NodeQuality 测试...${PLAIN}\n"
+        {
+            echo "v"
+            echo ""
+            echo ""
+            echo ""
+        } | bash <(curl -sL https://run.NodeQuality.com)
+        echo -e "\n${GREEN}NodeQuality 测试完成${PLAIN}"
+        ;;
+    2)
+        echo -e "${BLUE}正在运行 yabs 测试...${PLAIN}\n"
+        curl -sL https://yabs.sh | bash
+        echo -e "\n${GREEN}yabs 测试完成${PLAIN}"
+        ;;
+    3)
+        echo -e "${BLUE}========== 运行全部测试 ==========${PLAIN}\n"
+        
+        echo -e "${BLUE}[1/2] 正在运行 NodeQuality 测试...${PLAIN}\n"
+        {
+            echo "v"
+            echo ""
+            echo ""
+            echo ""
+        } | bash <(curl -sL https://run.NodeQuality.com)
+        echo -e "\n${GREEN}NodeQuality 测试完成${PLAIN}"
+        
+        echo -e "${BLUE}[2/2] 正在运行 yabs 测试...${PLAIN}\n"
+        curl -sL https://yabs.sh | bash
+        echo -e "\n${GREEN}yabs 测试完成${PLAIN}"
+        ;;
+    *)
+        echo -e "${YELLOW}未选择任何额外测试，即将退出${PLAIN}"
+        ;;
+esac
 
 # 总耗时
 END_TIME=$(date +%s)
